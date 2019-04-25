@@ -15,7 +15,7 @@ pipeline{
         }
          stage('deploy stage'){
             steps{
-                bat 'copy C:\\Program Files (x86)\\Jenkins\\workspace\\MyFirstPipeline\\target\\demo-0.0.1-SNAPSHOT.jar C:\\Users\\HP\\Desktop\\Symposium\\'
+                bat 'copy C:\\Program Files (x86)\\Jenkins\\workspace\\MyFirstPipeline\\target\\poda.txt C:\\Users\\HP\\Desktop\\Symposium\\'
             }
         }
     }
