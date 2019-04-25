@@ -11,7 +11,7 @@ pipeline{
          stage('testing stage'){
             steps{
                 bat 'cd target'
-               bat 'java -jar <project jar file name>.jar'
+               bat 'java -jar gey.jar'
             }
         }
          stage('deploy stage'){
