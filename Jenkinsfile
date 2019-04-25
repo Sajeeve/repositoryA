@@ -15,7 +15,7 @@ pipeline{
         }
          stage('deploy stage'){
             steps{
-             'copy C:\\Program Files (x86)\\Jenkins\\workspace\\poda.txt C:\\Users\\HP\\Desktop\\Symposium\\'
+             copy 'C:\\Program Files (x86)\\Jenkins\\workspace\\poda.txt C:\\Users\\HP\\Desktop\\Symposium\\'
                 //echo 'poda'
             }
         }
