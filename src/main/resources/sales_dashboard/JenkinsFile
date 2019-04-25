@@ -1,0 +1,20 @@
+pipeline{
+    agent any
+    stages{
+        stage('Checkout'){
+            steps{
+                sh 'pull'
+            }
+        }
+        stage('Build'){
+            steps {
+                sh 'make check'
+            }
+        }
+        stage('Deploy'){
+            steps{
+                sh 'make publish'
+            }
+        }
+    }
+}
