@@ -1,19 +1,25 @@
 pipeline{
-    agent any
+    agent any 
     stages{
-        stage('Checkout'){
+        stage('Checkout stage'){
             steps{
-                sh 'pull'
+                withMaven(maven:'maven-3.6.1'){
+                    sh 'mvn clean compile'
+                }
             }
         }
-        stage('Build'){
-            steps {
-                sh 'make check'
+         stage('Testing stage'){
+            steps{
+                withMaven(maven:'maven-3.6.1'){
+                    sh 'mvn test'
+                }
             }
         }
-        stage('Deploy'){
+         stage('Deploy stage'){
             steps{
-                sh 'make publish'
+                withMaven(maven:'maven-3.6.1'){
+                    sh 'mvn deploy'
+                }
             }
         }
     }
