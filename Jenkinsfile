@@ -10,12 +10,14 @@ pipeline{
         }
          stage('testing stage'){
             steps{
-               archive 'target/*.war'
+               //archive 'target/*.war'
+               bat 'mvn war'
             }
         }
          stage('deploy stage'){
             steps{
-                bat 'copy C:\\Program Files (x86)\\Jenkins\\workspace\\MyFirstPipeline\\target\\*.jar C:\\Users\\HP\\Desktop\\Symposium\\'
+                //bat 'copy C:\\Program Files (x86)\\Jenkins\\workspace\\MyFirstPipeline\\target\\*.jar C:\\Users\\HP\\Desktop\\Symposium\\'
+                echo 'poda'
             }
         }
     }
