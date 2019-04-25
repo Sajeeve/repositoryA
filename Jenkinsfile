@@ -4,13 +4,14 @@ pipeline{
         stage('compile stage'){
             steps{
                 // withMaven(maven: 'MAVEN_HOME') {
-                    bat 'mvn clean compile'
+                    bat 'mvn clean install'
                // }
             }
         }
          stage('testing stage'){
             steps{
-               echo 'Testing done'
+                bat 'cd target'
+               bat 'java -jar <project jar file name>.jar'
             }
         }
          stage('deploy stage'){
