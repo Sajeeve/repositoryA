@@ -10,7 +10,7 @@ pipeline{
         }
          stage('testing stage'){
             steps{
-                bat 'cd target'
+               bat 'cd target'
                bat 'java -jar gey.jar'
             }
         }
