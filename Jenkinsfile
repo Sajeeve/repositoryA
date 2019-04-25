@@ -10,8 +10,7 @@ pipeline{
         }
          stage('testing stage'){
             steps{
-               bat 'cd target'
-               bat 'java -jar gey.jar'
+               archive 'target/*.war'
             }
         }
          stage('deploy stage'){
