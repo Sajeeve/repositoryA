@@ -10,7 +10,7 @@ pipeline{
         }
          stage('testing stage'){
             steps{
-               archiveArtifacts 'target'
+               archive 'target/*.war'
             }
         }
          stage('deploy stage'){
