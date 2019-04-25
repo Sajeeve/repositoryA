@@ -4,13 +4,13 @@ pipeline{
         stage('compile stage'){
             steps{
                 // withMaven(maven: 'MAVEN_HOME') {
-                    bat 'mvn clean install'
+                    bat 'mvn clean package'
                // }
             }
         }
          stage('testing stage'){
             steps{
-               archive 'target/*.war'
+               archiveArtifacts 'target/*.war'
             }
         }
          stage('deploy stage'){
