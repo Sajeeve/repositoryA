@@ -10,8 +10,7 @@ pipeline{
         }
          stage('testing stage'){
             steps{
-               //archive 'target/*.war'
-               bat 'mvn war'
+               archive 'target/*.jar'
             }
         }
          stage('deploy stage'){
