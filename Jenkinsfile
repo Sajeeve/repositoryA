@@ -9,7 +9,7 @@ node{
             bat (/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
     }
     stage('artifact'){
-        archive 'target/*.jarjar'
+        archive 'target/*.jar'
     }
   
     stage('deploy'){
