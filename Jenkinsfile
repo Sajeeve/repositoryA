@@ -5,19 +5,15 @@ node{
         mvnHome = tool 'Maven'
     }
     stage('build'){
-       // if(isUnix()){
-         //   sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
-       // }else{
             echo 'this is build mven artifact'
             bat (/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
-       // }
     }
     stage('artifact'){
-        archive 'target/*war'
+        archive 'target/*.jarjar'
     }
+  
     stage('deploy'){
-        echo 'deploy started'
-       // bat '''copy C:\\Program Files (x86)\\Jenkins\\workspace\\Pipeline1\\target\\*.jar E:\\'''
-        bat ("copy C:\\Program Files (x86)\\Jenkins\\workspace\\Pipeline1\\target\\*.war E:\\")
+        //hardcoded the jar files name target/*.jar doesn't work
+        bat ('java -jar target/demo-0.0.1-SNAPSHOT.jar')
     }
 }
